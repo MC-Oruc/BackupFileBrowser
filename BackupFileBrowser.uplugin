@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
+	"VersionName": "1.0.0",
 	"FriendlyName": "Backup File Browser",
 	"Description": "Shows project backup files in the Content Browser.",
 	"Category": "Editor",
