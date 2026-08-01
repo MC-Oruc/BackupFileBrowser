@@ -1,47 +1,53 @@
-# Backup File Browser
+<h1 align="center">Backup File Browser</h1>
 
-Unreal Engine editor plugin that shows project `.bak` backup files in the Content Browser.
+<p align="center">
+  <a href="https://www.unrealengine.com/"><img src="https://img.shields.io/badge/Unreal%20Engine-5.7-blue.svg" alt="Unreal Engine 5.7"></a>
+  <a href="https://github.com/MC-Oruc/BackupFileBrowser/releases"><img src="https://img.shields.io/github/v/release/MC-Oruc/BackupFileBrowser?label=Release" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License MIT"></a>
+</p>
 
-## Features
+An Unreal Engine editor plugin that exposes project `.bak` backup files in the Content Browser.
 
-- Displays `.bak` files below the project `/Game` mount.
-- Labels them as **Backup File** in the Content Browser.
+## What it does
+
+- Shows `.bak` files below the project `/Game` mount.
+- Presents them as **Backup File** entries in the Content Browser.
 - Opens the selected backup file in Windows Explorer.
-- Keeps backup files editor-only; it adds no runtime module or cooked content.
+- Runs only in the Editor; it adds no runtime module or cooked content.
 
-## Requirements
+## One-command installation
 
-- Unreal Engine 5.7 or newer.
-- The engine `ContentBrowserFileDataSource` plugin enabled.
-- A C++ Unreal project with an Editor target.
-
-## Installation
-
-### Git submodule
-
-From the project root:
+Run this from the Unreal project root:
 
 ```powershell
 git submodule add https://github.com/MC-Oruc/BackupFileBrowser.git Plugins/BackupFileBrowser
 ```
 
-Enable the plugin in the project `.uproject` file:
+The plugin is enabled by default for Editor targets. Regenerate project files if your IDE requires it, build the Editor target, and restart Unreal Editor.
 
-```json
-{
-  "Name": "BackupFileBrowser",
-  "Enabled": true,
-  "TargetAllowList": ["Editor"]
-}
+To retrieve it in a fresh clone:
+
+```powershell
+git clone --recurse-submodules <your-project-repository-url>
 ```
 
-Regenerate project files, build the Editor target, and restart Unreal Editor.
+Or, for an existing clone:
+
+```powershell
+git submodule update --init --recursive
+```
 
 ## Usage
 
-Place or keep a file with the `.bak` extension under the project `Content` directory. It appears in the Content Browser under the `/Game` mount. Use the file's edit or preview action to reveal it in Explorer.
+Keep a file with the `.bak` extension under the project's `Content` directory. It appears in the Content Browser under `/Game`. Use its edit or preview action to reveal the file in Explorer.
 
-## Packaging validation
+## Requirements
+
+- Unreal Engine 5.7.
+- Windows editor target.
+- The engine `ContentBrowserFileDataSource` plugin.
+
+## Plugin packaging
 
 ```powershell
 & "<UE_ROOT>/Engine/Build/BatchFiles/RunUAT.bat" BuildPlugin `
