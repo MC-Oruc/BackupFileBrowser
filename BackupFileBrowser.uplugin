@@ -9,7 +9,7 @@
 	"CreatedByURL": "https://github.com/MC-Oruc",
 	"DocsURL": "https://github.com/MC-Oruc/BackupFileBrowser#readme",
 	"SupportURL": "https://github.com/MC-Oruc/BackupFileBrowser/issues",
-	"EngineVersion": "5.7.0",
+	"EngineVersion": "5.8.0",
 	"EnabledByDefault": true,
 	"EditorOnly": true,
 	"CanContainContent": false,
